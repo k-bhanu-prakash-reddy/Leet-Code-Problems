@@ -1,0 +1,38 @@
+
+1st model
+class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+         ans = [0]*(2*len(nums))
+         for i in range(len(nums)) :
+              ans[i]=nums[i]
+              ans[i+len(nums)]=nums[i]
+
+
+         return ans
+
+
+2nd model
+  class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+         ans = []
+         for i in range(len(nums)) :
+              ans.append(nums[i])
+         for i in range(len(nums)) :   
+              ans.append(nums[i])
+      
+           return ans   
+
+           
+ 3rd model
+              class Solution:
+                 def getConcatenation(self, nums: List[int]) -> List[int]:
+         
+
+                         return nums+nums
+
+
+
+        
+        
+
+           
