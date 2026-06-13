@@ -5,7 +5,7 @@ class Solution:
             digits=len(str(num))
              
             if digits % 2 == 0 : 
-                count +=
+                count +=1
         return count          
 
 
