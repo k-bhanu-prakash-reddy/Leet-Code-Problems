@@ -6,3 +6,14 @@ class Solution:
                 if nums[i]+nums[j]==target:
                     return [i,j]
         return []
+
+
+
+2nd model
+only logic
+mp={}
+for i,num in enumerate(nums) :
+      complement=target-num
+      if complement in mp :
+          return [mp[complement],i]
+    mp[num]=i
