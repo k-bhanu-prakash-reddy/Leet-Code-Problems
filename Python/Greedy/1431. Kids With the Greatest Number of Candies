@@ -1,0 +1,17 @@
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool] :
+        max_mum=0
+        total=0
+        for can in candies :
+            max_mum=max(max_mum,can)
+        result= []    
+        for can in candies :
+            total = can + extraCandies
+            if total >= max_mum :
+                result.append(True)
+                
+            else :
+                result.append(False)  
+        return result           
+
+you did this problem bro be proud
