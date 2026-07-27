@@ -1,0 +1,32 @@
+class Solution:
+    def leaders(self, nums):
+        left = 0
+        right = len(nums) - 1
+        result = []
+        while left <= right :
+            
+            temp1 = right
+            while left < temp1 :
+                if nums[left] < nums[temp1] :
+                    left +=1
+                else :
+                    temp1 -=1
+            if left == temp1 :
+                result.append(nums[left])
+            left +=1
+        return result    
+
+
+  optimal solution
+  class Solution:
+    def leaders(self, nums):
+        result = []
+        maxi = float('-inf')
+
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] > maxi:
+                result.append(nums[i])
+                maxi = nums[i]
+
+        result.reverse()
+        return result
