@@ -4,4 +4,4 @@ class Solution:
         for stone in stones :
             if stone in jewels :
                 count +=1
-        return count        
+        return count       
