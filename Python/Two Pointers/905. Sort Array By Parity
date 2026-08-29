@@ -1,0 +1,18 @@
+class Solution:
+    def sortArrayByParity(self, nums: List[int]) -> List[int]:
+        freq = [0] *len(nums)
+        right = 0
+        left = 0
+        even = 0
+        
+        while left < len(nums) :
+            if nums[left] % 2 == 0 :
+                freq[even] = nums[left] 
+                even +=1
+            left +=1
+        while right < len(nums) :
+            if nums[right] % 2 != 0 :
+                freq[even] = nums[right] 
+                even +=1
+            right +=1
+        return freq          
