@@ -1,0 +1,19 @@
+class Solution:
+    def findMissingElements(self, nums: List[int]) -> List[int]:
+        nums.sort()
+        list1 = []
+        temp = nums[0]
+        t=0
+        for i in range(nums[0],nums[len(nums)-1]) :
+            if temp == nums[t] :
+                t+=1
+            else :
+                list1.append(i)
+            temp +=1
+                
+
+                
+                
+                
+
+        return list1    
