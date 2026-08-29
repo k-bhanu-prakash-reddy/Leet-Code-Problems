@@ -1,0 +1,28 @@
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        m = len(matrix) 
+        n = len(matrix[0]) 
+        visited = [[False] * n for _ in range(m)]
+        ans = []
+
+        dr = [0,1,0,-1]
+        dc = [1,0,-1,0]
+
+        row = 0
+        column = 0
+        direction = 0
+        for _ in range(m*n) :
+            ans.append(matrix[row][column]) 
+            visited[row][column] = True
+
+            newrow = row+dr[direction]
+            newcolumns = column+dc[direction] 
+            
+            if (newrow < 0 or newcolumns < 0 or newrow >= m or newcolumns >= n or visited[newrow][newcolumns] ) :
+
+                direction = (direction+1) % 4
+                newrow = row+dr[direction] 
+                newcolumns = column+dc[direction]
+            row = newrow
+            column = newcolumns
+        return ans
