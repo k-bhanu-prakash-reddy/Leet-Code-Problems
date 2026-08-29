@@ -1,0 +1,20 @@
+
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        alreadySeen=set()
+        sum=0
+        while sum !=1 :
+            temp=n
+        if sum in alreadySeen:
+            return False
+            alreadySeen.add(sum)
+            
+            sum=0
+            while temp!=0 :
+                digit=temp%10
+                sum +=digit*digit
+                
+                
+                temp = temp//10
+         n =sum
+        return True
