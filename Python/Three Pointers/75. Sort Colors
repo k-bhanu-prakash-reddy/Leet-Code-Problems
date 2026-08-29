@@ -1,0 +1,25 @@
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        freq =[]
+        left = 0
+        mid = 0
+        right =0
+        
+        while left < len(nums) :
+            if nums[left] ==0 :
+                freq.append(0)
+            left +=1
+        while mid < len(nums) :
+            if nums[mid] ==1 :
+                freq.append(1)
+            mid +=1
+        while right < len(nums) :
+            if nums[right] ==2 :
+                freq.append(2)
+           
+            right +=1
+           
+
+
+        for i in range(len(nums)) :
+            nums[i] = freq[i]    
