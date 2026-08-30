@@ -6,4 +6,4 @@ class Solution:
             if nums[i] > maximum :
                 summ = i
             maximum = max(maximum,nums[i])    
-        return summ 
+        return summ
