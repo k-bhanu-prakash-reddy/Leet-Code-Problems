@@ -1,0 +1,46 @@
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        result = []
+
+        if len(p) > len(s):
+            return []
+
+        freq1 = {}
+
+        for i in range(len(p)):
+            if p[i] in freq1:
+                freq1[p[i]] += 1
+            else:
+                freq1[p[i]] = 1
+
+        freq = {}
+
+        for i in range(len(p)):
+            if s[i] in freq:
+                freq[s[i]] += 1
+            else:
+                freq[s[i]] = 1
+
+        left = 0
+
+        for right in range(len(p), len(s)):
+
+            if freq == freq1:
+                result.append(left)
+
+            freq[s[left]] -= 1
+
+            if freq[s[left]] == 0:
+                del freq[s[left]]
+
+            if s[right] in freq:
+                freq[s[right]] += 1
+            else:
+                freq[s[right]] = 1
+
+            left += 1
+
+        if freq == freq1:
+            result.append(left)
+
+        return result
