@@ -1,0 +1,36 @@
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        if len(s1) > len(s2) :
+            return False
+        freq = {}
+        freq1 = {}
+        for i in range(len(s1)) :
+            if s1[i] in freq :
+                freq[s1[i]] +=1
+            else :
+                freq[s1[i]] = 1
+        for i in range(len(s1)) :
+            if s2[i] in freq1 :
+                freq1[s2[i]] +=1
+            else :
+                freq1[s2[i]] = 1
+        left = 0
+        for i in range(len(s1),len(s2)) :
+            if freq == freq1 :
+                return True
+            freq1[s2[left]] -= 1
+
+            if freq1[s2[left]] == 0 :
+                del freq1[s2[left]]
+
+            if s2[i] in freq1 :
+                freq1[s2[i]] += 1
+
+            else :
+                freq1[s2[i]] = 1
+            left +=1
+
+        if freq == freq1 :
+            return True
+
+        return False        
