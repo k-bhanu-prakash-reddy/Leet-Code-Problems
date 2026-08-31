@@ -1,0 +1,13 @@
+class Solution:
+    def minSubarraySum(self, arr: list[int]) -> int:
+        minimum = float("inf")
+        summ = 0
+        for i in range(len(arr)) :
+            summ += arr[i]
+            if summ < minimum :
+                minimum = summ 
+            if summ > 0 :
+                summ = 0
+        return minimum        
+        # code here
+        
