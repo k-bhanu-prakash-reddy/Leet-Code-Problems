@@ -1,0 +1,29 @@
+class Solution:
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
+        left = max(weights)
+        right = sum(weights)
+
+        while left <= right :
+            mid = left + (right-left) // 2
+
+            capacity = 0
+            count = 0
+
+            for i in range(len(weights)) :
+                capacity += weights[i]
+                if capacity == mid   :
+                    count +=1
+                    capacity = 0
+                elif capacity > mid :
+                    count +=1
+                    capacity = weights[i]
+            if capacity > 0 :
+                count +=1        
+
+            if count <= days :
+                right = mid-1 
+
+            else :
+                left = mid +1 
+
+        return left    
