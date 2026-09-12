@@ -10,4 +10,5 @@ class Solution:
                 result[i-1] = "Buzz"
             else :
                 result[i-1] = str(i)
-        return result  
+        return result
+
