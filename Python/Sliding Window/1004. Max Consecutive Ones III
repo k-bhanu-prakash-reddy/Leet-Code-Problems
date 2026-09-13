@@ -15,4 +15,4 @@ class Solution:
                 left +=1
             count = i - left + 1
             maximum = max(maximum,count)
-        return maximum 
+        return maximum
