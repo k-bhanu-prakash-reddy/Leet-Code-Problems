@@ -16,5 +16,5 @@ class Solution:
                 freq[2*temp1+1] = nums[right]
                 temp1 +=1
             right +=1
-        return freq             
+        return freq          
 
