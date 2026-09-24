@@ -7,4 +7,4 @@ class Solution:
             a[i]=nums[len(nums)-k+i]
         for i in range(len(nums)-k) :
             a[k+i]=nums[i]  
-        nums[:] =a   
+        nums[:] =a 
